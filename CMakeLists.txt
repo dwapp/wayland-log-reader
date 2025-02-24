@@ -1,16 +1,13 @@
-cmake_minimum_required(VERSION 3.1.0)
+cmake_minimum_required(VERSION 3.10)
 
 project(wayland-log-reader)
 
+include(GNUInstallDirs)
+
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
-set(CMAKE_AUTOUIC ON)
 
-if (CMAKE_VERSION VERSION_LESS "3.7.0")
-    set(CMAKE_INCLUDE_CURRENT_DIR ON)
-endif()
-
-find_package(Qt6 COMPONENTS Widgets Quick WaylandCompositor REQUIRED)
+find_package(Qt6 COMPONENTS Quick REQUIRED)
 
 add_executable(wayland-log-reader
     main.cpp
@@ -18,8 +15,7 @@ add_executable(wayland-log-reader
 )
 
 target_link_libraries(wayland-log-reader
-    Qt6::Widgets
     Qt6::Quick
 )
 
-install(TARGETS wayland-log-reader DESTINATION bin)
+install(TARGETS wayland-log-reader DESTINATION ${CMAKE_INSTALL_BINDIR})

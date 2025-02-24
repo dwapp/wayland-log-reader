@@ -88,3 +88,7 @@ CTestTestfile.cmake
 _deps
 
 build/
+
+.cmake/
+.qtc/
+qtcsettings.cmake

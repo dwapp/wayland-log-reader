@@ -37,11 +37,14 @@ that it can be run on standard log output, which is useful because it:
 
 ## Dependencies
 
-- QtQuick Controls 2
-- Qbs
+- cmake
+- QtQuick
 
 ## Building
 
 In project directory
 
-    $ qbs
+```bash
+cmake -B build
+cmake --build build
+```
