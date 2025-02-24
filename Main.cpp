@@ -23,10 +23,8 @@ int main(int argc, char *argv[])
     }
 
     QQmlApplicationEngine engine;
-
     engine.rootContext()->setContextProperty("waylandLog", waylandLog);
-
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    engine.loadFromModule("wlog-reader", "Main");
     if (engine.rootObjects().isEmpty())
         return -1;
 

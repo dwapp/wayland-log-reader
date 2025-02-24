@@ -82,7 +82,12 @@ ApplicationWindow {
                             Label { text: "(" }
                             Repeater {
                                 model: parts.args
-                                ArgumentItem { arg: parts.args[index]; onObjectSelected: handleObjectSelected(object) }
+                                ArgumentItem {
+                                    arg: parts.args[index];
+                                    function onObjectSelected(object) {
+                                        handleObjectSelected(object)
+                                    }
+                                }
                             }
                             Label { text: ")" }
                         }
@@ -98,7 +103,12 @@ ApplicationWindow {
                             Label { text: "(" }
                             Repeater {
                                 model: parts.args
-                                ArgumentItem { arg: parts.args[index]; onObjectSelected: handleObjectSelected(object) }
+                                ArgumentItem {
+                                    arg: parts.args[index];
+                                    function onObjectSelected(object) {
+                                        handleObjectSelected(object)
+                                    }
+                                }
                             }
                             Label { text: ")" }
                         }
